@@ -1,11 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyGenericClass
+namespace MyEnumerable 
 {
-    public class Guarda3<T>
+    public class Guarda3<T> : IEnumerable<T>
     {
         private T var1;
         private T var2;
@@ -34,6 +35,17 @@ namespace MyGenericClass
                 throw new IndexOutOfRangeException();
             else
                 items[i] = item;
+        }
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                yield return items[i];
+            }
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
