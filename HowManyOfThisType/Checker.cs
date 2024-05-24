@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace HowManyOfThisType
 {
-    public static class Cheker
+    public static class Checker
     {
         public static int HowManyOfType<T>(IEnumerable<object> items)
         {
@@ -15,7 +15,7 @@ namespace HowManyOfThisType
             {
                 if (o is T) howMany++;
             }
-            
+
             return howMany;
         }
     }
