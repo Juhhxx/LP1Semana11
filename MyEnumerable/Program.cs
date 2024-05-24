@@ -15,16 +15,18 @@ namespace MyEnumerable
             g3f.SetItem(2, 54.6f);
 
             Console.WriteLine("Strings:");
-            Console.WriteLine($"    {g3s.GetItem(0)}");
-            Console.WriteLine($"    {g3s.GetItem(1)}");
-            Console.WriteLine($"    {g3s.GetItem(2)}");
+            foreach (string s in g3s)
+            {
+                Console.WriteLine($"    {s}");
+            }
 
             Console.WriteLine("Floats:");
-            Console.WriteLine($"    {g3f.GetItem(0)}");
-            Console.WriteLine($"    {g3f.GetItem(1)}");
-            Console.WriteLine($"    {g3f.GetItem(2)}");
+            foreach (float f in g3f)
+            {
+                Console.WriteLine($"    {f}");
+            }
 
-            // Expected output:
+            // Expected output
 
             // Strings:
             //     Olá
@@ -34,7 +36,6 @@ namespace MyEnumerable
             //     0
             //     0
             //     54.6
-
         }
     }
 }
